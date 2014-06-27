@@ -1,0 +1,32 @@
+.events {
+  background: #27282e;
+  height: calc(100% - 2.4em);
+  p {
+    font-family: 'Proxima Nova - Semibold';
+    color: #fff;
+    line-height: 1.2em;
+  }
+  strong {
+    color: #0084b4;
+  }
+  small {
+    font-family: 'Proxima Nova - Light';
+    color: #787b84;
+  }
+  ul {
+    li {
+      border-bottom: 1px solid #4f5157;
+      padding: .8em;
+      & > div {
+        display: inline-block;
+        vertical-align: middle;
+        &:nth-of-type(1) {
+          margin-right: .4em;
+        }
+        &:nth-of-type(2) {
+          width: calc(100% - 4em);
+        }
+      }
+    }
+  }
+}

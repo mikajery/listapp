@@ -1,0 +1,11 @@
+<nav class="desktop" ng-init="popup = true; synced = false; importing = false">
+  <div class="container">
+    <a href="/#/"><img src="images/listapp-nav.png"></a>
+    <ul>
+      <li><a class="icon-activity" ng-class="{ active: isActive('activity')}" href="#/activity">ACTIVITY</a></li>
+      <li><a class="icon-messages" ng-class="{ active: isActive('messages')}" href="#/messages">MESSAGES</a></li>
+      <li><a class="icon-profile" ng-class="{ active: isActive('user')}" href="#/user">PROFILE</a></li>
+      <li ng-class="{ hidden: !popup}"><a class="icon-sync" ng-click="synced = true"></a></li>
+    </ul>
+  </div>
+</nav>

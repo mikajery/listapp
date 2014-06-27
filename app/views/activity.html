@@ -1,0 +1,50 @@
+<header-light-component
+  header-title="Activity"
+  right-icon="icon-cake" right-method="showExtension">
+</header-light-component>
+<div class="activity container">
+  <article ng-repeat="post in activity">
+    <div class="avatar"><span class="avatar-friend" style="background-image: url({{ post.avatar_url }})"></span></div>
+    <ng-switch on="post.action">
+      <div class="post" ng-switch-when="add">
+        <p><a>{{ post.from }}</a> added <a> {{ post.items.length }} wishes </a>. <small>{{ post.created | relativeDate }}</small></p>
+        <div>
+          <span class="item" style="background-image: url({{ item.image_url }})" ng-repeat="item in post.items | limitTo: 5"></span>
+          <a class="more-items" ng-hide="post.items.length - 5 <= 0">+ {{ post.items.length - 5 }}</a>
+        </div>
+      </div>
+      <div class="post" ng-switch-when="join">
+        <p><a>{{ post.from }}</a> joined <strong>Listapp</strong>. <small>{{ post.created | relativeDate }}</small></p>
+        <div>
+          <span class="avatar-friend" style="background-image: url({{ post.avatar_url }})"></span>
+          <a class="button">View wishlist</a>
+        </div>
+      </div>
+      <div class="post" ng-switch-when="grant">
+      <p><a>{{post.from}}</a> granted <a>{{ post.to.name }}</a>'s wish! <small>{{ post.created | relativeDate }}</small></a></p>
+        <div>
+          <span class="item" style="background-image: url({{ post.item.image_url }})"></span>
+          <span class="icon-arrow-right"></span>
+          <span class="avatar-friend" style="background-image: url({{ post.to.avatar_url }})"></span>
+        </div>
+      </div>
+      <div class="post" ng-switch-when="comment">
+        <p><a>{{ post.from }}</a> comment on your wish. <small>{{ post.created | relativeDate }}</small></a></p>
+        <div>
+          <span class="item" style="background-image: url({{ post.item.image_url }})"></span>
+          <p class="comment"><i>“{{ post.comment }}”</i></p>
+        </div>
+      </div>
+      <div class="post" ng-switch-when="suggest">
+      <div>
+        <p><a>{{ post.from }}</a> suggested a wish for <a>{{ post.to }}</a>. <small>{{ post.created | relativeDate }}</small></p>
+        <div>
+          <span class="item" style="background-image: url({{ post.item.image_url }})"></span>
+          <a class="button"><span>View wishlist</span></a>
+        </div>
+      </div>
+      </div>
+    </ng-switch>
+  </article>
+</div>
+<nav-component></nav-component>

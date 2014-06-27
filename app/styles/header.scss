@@ -1,0 +1,206 @@
+header.mobile {
+  background-color: #ffffff;
+  margin-top: 3.3em;
+  &.dark {
+    background-color: #1a1a1a;
+  }
+  h1 {
+    background-color: #fff;
+    border-bottom: 1px solid #bdbdbd;
+    left: 0;
+    line-height: 2.4em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+  .banner {
+    background-image: url(../images/cover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #bdbdbd;
+    height: 4.4em;
+    position: relative;
+  }
+  .avatar-user {
+    background-image: url(../images/avatar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.2em;
+    border: 0.2em solid #ffffff;
+    bottom: 0;
+    display: block;
+    height: 3em;
+    left: .5em;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    vertical-align: middle;
+    width: 3em;
+  }
+  button {
+    background: -webkit-linear-gradient(top, #5e5e5e 0%, #282828 100%);
+    background: linear-gradient(to bottom, #5e5e5e 0%, #282828 100%);
+    border-radius: 2em;
+    border: 1px solid #282828;
+    bottom: 0;
+    box-shadow: 0 0 1px 0 #777777;
+    color: #fff;
+    height: 1.8em;
+    margin: auto;
+    position: absolute;
+    right: .5em;
+    top: 0;
+    vertical-align: middle;
+    span {
+      line-height: 11px;
+    }
+  }
+  .left-icon {
+    position: fixed;
+    top: .7em;
+    left: .8em;
+    font-size: 1.4em;
+    z-index: 3;
+  }
+  .right-icon {
+    position: fixed;
+    top: .7em;
+    right: .8em;
+    font-size: 1.4em;
+    z-index: 3;
+  }
+  .menu {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cdcdcd;
+    color: #313131;
+    overflow: hidden;
+    ul {
+      display: block;
+      li {
+        display: inline-block;
+        float: left;
+        border-right: 1px solid #cdcdcd;
+        a {
+          display: block;
+          font-family: 'Proxima Nova - Light';
+          padding: 0.8em 1.4em;
+          &.active {
+            background: -webkit-linear-gradient(top, #e9e9e9 0%, #ffffff 100%);
+            background: linear-gradient(to bottom, #e9e9e9 0%, #ffffff 100%);
+          }
+        }
+        &:last-child {
+          border: 0;
+          float: right;
+          margin-right: .6em;
+          span {
+            font-size: 1.4em;
+            line-height: 1.9em;
+          }
+        }
+      }
+    }
+  }
+}
+
+header.desktop {
+  margin-bottom: 1em;
+  margin-top: 6.3em;
+  &.light {
+    font-size: 1.4em;
+    margin-bottom: 1.4em;
+    margin-top: 6em;
+    position: relative;
+    h1 {
+      display: inline-block;
+      font-family: 'Proxima Nova - Semibold';
+      line-height: 1.4em;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .left-icon,
+    .right-icon {
+      background: -webkit-linear-gradient(top, #f3f3f3 0%, #e5e5e5 100%);
+      background: linear-gradient(to bottom, #f3f3f3 0%, #e5e5e5 100%);
+      border-radius: 0.4em;
+      border: 1px solid #d7d7d7;
+      box-shadow: inset 0 1px 1px 0 #ffffff;
+      display: inline-block;
+      font-size: 0.8em;
+      font-style: normal;
+      line-height: 1.4em;
+      padding: 0.4em 1em;
+      position: absolute;
+      top: 0;
+    }
+    .right-icon { right: .8em; }
+    .left-icon  { left: .8em; }
+    .left-icon + h1 {
+      display: block;
+      text-align: center;
+    }
+  }
+  .banner {
+    background-image: url(../images/cover.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 6em;
+    position: relative;
+    width: 100%;
+  }
+  .avatar-user {
+    background-image: url(../images/avatar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.2em;
+    border: 0.4em solid #ffffff;
+    box-shadow: 0 0 1px 0 #b0b0b0;
+    display: block;
+    height: 8em;
+    position: absolute;
+    top: 1em;
+    width: 8em;
+  }
+  .menu {
+    background-color: #fafafa;
+    border-bottom: 1px solid #cecece;
+    display: block;
+    font-size: 1.2em;
+    overflow: hidden;
+    h1 {
+      color: #545759;
+      display: inline-block;
+      font-family: 'Proxima Nova - Semibold';
+      line-height: 2.7em;
+      margin-left: 6.2em;
+      text-align: left;
+    }
+    ul {
+      float: right;
+      li {
+        display: inline-block;
+        font-size: 1.2em;
+        line-height: 1.05em;
+        margin-left: 2em;
+        vertical-align: middle;
+        &:last-child a { width: 1em; }
+        a {
+          border-bottom: 4px solid transparent;
+          color: #acacac;
+          display: block;
+          font-family: 'Proxima Nova - Light';
+          padding: 1em .4em;
+          &.active {
+            border-bottom: 4px solid #0088b7;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<article>
+  <div class="user">
+    <span class="avatar-friend" style="background-image: url({{ item.avatar_url }})"></span>
+    <p><a>{{ item.author }}</a><br>{{ item.created | relativeDate }}</p>
+  </div>
+  <div class="post">
+    <div class="post-primary">
+      <span class="item-illustration" style="background-image: url({{ item.image_url }})"></span>
+      <span class="item-description">
+        <h3>{{ item.title }}</h3>
+        <p class="reviews"><span ng-bind-html=" item.rate | stars"></span><small>{{ item.reviews_nb }} Reviews</small></p>
+        <div class="actions" ng-switch="item.status">
+          <span ng-switch-when="owned">
+            <button class="grey"><span class="icon-share"></span><span>Share</span></button>
+            <button class="grey"><span class="icon-checkmark" ng-class="{ active: item.status === 'owned' }"></span><span>I own it</span></button>
+            <button class="grey"><span class="icon-more"></span></button>
+          </span>
+          <span ng-switch-when="gifted">
+            <button class="grey"><span class="icon-share"></span><span>Share</span></button>
+            <button class="grey"><span class="icon-checkmark" ng-class="{ active: item.status === 'owned' }"></span><span>I own it</span></button>
+            <button class="grey"><span class="icon-more"></span></button>
+          </span>
+          <span ng-switch-when="pending">
+            <button class="orange"><span class="icon-heart"></span><span>Add to wishlist</span></button>
+            <button class="grey"><span class="icon-gift"></span><span>Gift it</span></button>
+            <button class="grey"><span class="icon-share"></span><span>Share</span></button>
+            <button class="grey"><span class="icon-more"></span></button>
+          </span>
+          <span ng-switch-when="new">
+            <button class="green"><span>Approve</span></button>
+            <button class="red"><span>Remove</span></button>
+            <button class="grey"><span class="icon-more"></span></button>
+          </span>
+        </div>
+      </span>
+    </div>
+    <div class="comments" ng-init="limit = 3">
+      <p class="gifted-by" ng-show="item.status === 'gifted'"><span class="icon-gift"></span><span>Gifted by {{ item.gifted_by }}!</span></p>
+      <p class="own-by"><span class="icon-checkmark"></span><span>{{ item.owners | enumerateArray }} own this. </span></p>
+      <a ng-click="limit = limit + 3" ng-hide="item.comments.length - limit <= 0"><p class="more-comments">{{ item.comments.length - limit }} more comments</p></a>
+      <ul>
+        <li ng-repeat="comment in item.comments | limitTo: limit">
+          <div class="avatar-comment" style="background-image: url({{ comment.avatar_url }})"></div>
+          <p><a>{{ comment.author }}</a> {{ comment.content }}</p>
+        </li>
+      </ul>
+    </div>
+    <expandable-comment></expandable-comment>
+    <span class="ribbon" ng-switch="item.status">
+      <img ng-switch-when="pending" src="images/list/ribbon-pending.png">
+      <img ng-switch-when="owned"   src="images/list/ribbon-owned.png">
+      <img ng-switch-when="gifted"  src="images/list/ribbon-gifted.png">
+      <img ng-switch-when="new"     src="images/list/ribbon-new.png">
+    </span>
+  </div>
+</article>

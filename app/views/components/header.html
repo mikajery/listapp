@@ -1,0 +1,14 @@
+<header class="mobile">
+  <h1>{{headerTitle}}</h1>
+  <div class="banner container">
+    <a class="avatar-user"></a>
+    <button><span class="icon-gear"></span></button>
+  </div>
+  <div class="menu">
+    <ul>
+      <li><a ng-class="{ active: isActive('list') }" href="#/user/list">List</a></li>
+      <li><a ng-class="{ active: isActive('friends') }" href="#/user/friends">Friends</a></li>
+      <li ng-click="grid = !grid"><span ng-class="{'icon-list': grid, 'icon-grid': !grid }" ng-show="isActive('list')"></span></li>
+    </ul>
+  </div>
+</header>

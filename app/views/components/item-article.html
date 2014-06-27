@@ -1,0 +1,37 @@
+<article>
+  <div class="user">
+    <span class="avatar-friend" style="background-image: url({{ item.avatar_url }})"></span>
+    <p><a>{{ item.author }}</a><br> {{ item.created | relativeDate }}</p>
+  </div>
+  <div class="item" style="background-image: url({{ item.image_url }})">
+    <button class="wishlist orange" ng-show="item.status !== 'new'"><span>+ Wishlist</span></button>
+    <span class="pending" ng-show="item.status === 'new'">
+      <button class="green"><span>Approve</span></button>
+      <button class="red"><span>Remove</span></button>
+    </span>
+  </div>
+  <div class="actions">
+    <div><span class="icon-comment"></span></div>
+    <div><span class="icon-share"></span></div>
+    <div ng-hide="item.status === 'gifted'"><span class="icon-gift"></span></div>
+    <div><span class="icon-more"></span></div>
+  </div>
+  <div class="comments" ng-init="limit = 3">
+    <p class="gifted-by" ng-show="item.status === 'gifted'"><span class="icon-gift"></span>Gifted by {{ item.gifted_by }}!</p>
+    <p class="own-by"><span class="icon-checkmark"></span> {{ item.owners | enumerateArray }} own this.</p>
+    <a ng-click="limit = limit + 3" ng-hide="item.comments.length - limit <= 0"><p class="more-comments">{{ item.comments.length - limit }} more comments</p></a>
+    <ul>
+      <li ng-repeat="comment in item.comments | limitTo: limit">
+        <div class="avatar-comment" style="background-image: url({{ comment.avatar_url }})"></div>
+        <p><a>{{ comment.author }}</a> {{ comment.content }}</p>
+      </li>
+    </ul>
+    <expandable-comment></expandable-comment>
+  </div>
+  <span class="ribbon" ng-switch="item.status">
+    <img ng-switch-when="pending" src="images/list/ribbon-pending.png">
+    <img ng-switch-when="owned" src="images/list/ribbon-owned.png">
+    <img ng-switch-when="gifted" src="images/list/ribbon-gifted.png">
+    <img ng-switch-when="new" src="images/list/ribbon-new.png">
+  </span>
+</article>

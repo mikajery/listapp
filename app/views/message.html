@@ -1,0 +1,17 @@
+<header-light-component
+  header-title="[ID of your correspondent]"
+  left-icon="icon-arrow-left" left-url="/#/messages">
+</header-light-component>
+  <div class="message desktop write">
+    <fieldset class="container container-tight">
+      <input>
+      <button class="blue"><span class="icon-comment"></span><span>Reply</span></button>
+    </fieldset>
+  </div>
+  <ul class="message container container-tight">
+    <li ng-repeat="message in message.thread">
+      <div ng-class="{ sent: message.from === 'me', received: message.to === 'me' }"><p>{{ message.content }}<br><small>{{ message.created | relativeDate }}</small></p></div>
+      <div><span class="avatar-friend" style="background-image: url({{ message.avatar_url }})"></span></div>
+    </li>
+  </ul>
+<nav-component></nav-component>

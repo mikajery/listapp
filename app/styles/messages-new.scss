@@ -1,0 +1,49 @@
+.messages-new {
+  margin-top: 4em;
+  padding: 0 .8em;
+  fieldset {
+    position: relative;
+    border: 2px solid #cdcdcd;
+    border-radius: .8em;
+    overflow: hidden;
+    margin: 1.2em 0;
+    input,
+    textarea {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      margin: 0;
+      border: 0;
+      font-size: 1.2em;
+      padding: .6em 1em;
+    }
+    .recipient {
+      border-bottom: 1px solid #e2e2e2;
+      padding-left: 3em;
+    }
+    &:before {
+      content: "To:";
+      display: inline-block;
+      position: absolute;
+      top: .7em;
+      left: .8em;
+      font-size: 1.2em;
+      color: #cdcdcd;
+    }
+  }
+  button.blue {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+  }
+}
+
+.no-touch {
+  .messages-new {
+    button.blue {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+    }
+  }
+}

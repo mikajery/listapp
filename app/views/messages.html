@@ -1,0 +1,17 @@
+<header-light-component
+  header-title="Messages"
+  right-icon="icon-write" right-url="/#/messages/new">
+</header-light-component>
+<div class="messages container-tight">
+  <ul>
+    <li ng-repeat="message in messages">
+      <div><span class="avatar-friend" style="background-image: url({{ message.sender.avatar_url }})"></span></div>
+      <div><p><a>{{ message.last_message.from }}</a> “{{ message.last_message.content }}” <small>{{ message.last_message.created | relativeDate }}</small></p></div>
+      <div>
+        <span class="avatar-friend" style="background-image: url({{ message.sender.avatar_url }})" ng-show="message.correspondant"></span>
+        <a href="/#/messages/001" ng-hide="message.correspondant"><span class="icon-chevron-right"></span></a>
+      </div>
+    </li>
+  </ul>
+</div>
+<nav-component></nav-component>

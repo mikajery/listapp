@@ -1,0 +1,133 @@
+@import "compass/reset";
+@import "compass/typography/links/unstyled-link";
+
+a {
+  @include unstyled-link;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  font-family: "Open Sans";
+}
+
+h1 {
+  font-family: "Proxima Nova - Light";
+  font-size: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+}
+
+h2 {
+  color: #9196a2;
+  line-height: 3.4em;
+}
+
+input,
+button,
+textarea {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  outline-width: 0;
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+html,
+body,
+main {
+  height: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #e8e8e8;
+  font-family: "Proxima Nova - Light", Arial, sans-serif;
+  &.extended {
+    position: relative;
+    right: 0;
+    width: calc(100% + 16em);
+    &.extension {
+      transition: all .4s ease-in-out;
+      right: 16em;
+    }
+    &.noextension {
+      transition: all .4s ease-in-out;
+      right: 0em;
+    }
+    main {
+      display: inline-block;
+      float: left;
+      width: calc(100% - 16em);
+    }
+    ng-include { display: inline-block; }
+  }
+}
+
+main { position: relative; }
+section { padding-bottom: 4em; }
+
+ng-include {
+  display: none;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  vertical-align: top;
+  width: 16em;
+}
+
+.container {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-left: .8em;
+  padding-right: .8em;
+}
+
+.no-touch {
+  font-size: .8em;
+  html,
+  body,
+  main {
+    min-width: 960px;
+  }
+  .mobile { display: none; }
+  .container {
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-tight {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.touch {
+  .desktop { display: none; }
+}
+
+.button {
+  background: -webkit-linear-gradient(top, #f3f3f3 0%, #e5e5e5 100%);
+  background: linear-gradient(to bottom, #f3f3f3 0%, #e5e5e5 100%);
+  border-radius: 0.4em;
+  border: 1px solid #d7d7d7;
+  box-shadow: inset 0 1px 1px 0 #ffffff;
+  display: inline-block;
+  font-family: "Open Sans";
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4em;
+  padding: 0.4em 1em;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

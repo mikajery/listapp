@@ -1,0 +1,89 @@
+.activity {
+  padding: .8em;
+  article {
+    overflow: hidden;
+    &:after {
+      border-top: 1px solid #dedede;
+      content: "";
+      display: block;
+      height: 0;
+      margin: 1.4em auto;
+      width: calc(100% - 6em);
+    }
+    .avatar {
+      display: inline-block;
+      margin-right: .4em;
+      vertical-align: top;
+    }
+    .post {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - 4em);
+    }
+    .item,
+    .icon-arrow-right {
+      margin-right: .4em;
+    }
+  }
+  p {
+    line-height: 1.2em;
+    margin-bottom: .4em;
+    a {
+      color: #0084b4;
+      font-family: 'Proxima Nova - Semibold';
+    }
+    small { color: #9c9c9c; }
+    strong { font-family: 'Proxima Nova - Semibold'; }
+  }
+  .comment {
+      display: inline-block;
+      font-size: 0.8em;
+      vertical-align: middle;
+      width: calc(100% - 4.6em);
+      margin: 0 0 0 .4em;
+  }
+  .item {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.2em;
+    border: 1px solid #dddddd;
+    display: inline-block;
+    height: 2.5em;
+    vertical-align: middle;
+    width: 2.5em;
+  }
+  .more-items {
+    background: -webkit-linear-gradient(top, #ff7400 0%, #ff3400 100%);
+    background: linear-gradient(to bottom, #ff7400 0%, #ff3400 100%);
+    border-radius: 0.2em;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Proxima Nova - Regular';
+    line-height: 2.5em;
+    text-align: center;
+    vertical-align: middle;
+    width: 2.5em;
+  }
+}
+
+.no-touch {
+  .activity {
+    font-size: 1.4em;
+    article {
+      position: relative;
+    }
+    small {
+      position: absolute;
+      right: 3em;
+      bottom: 2em;
+    }
+    .comment {
+      width: 30em;
+    }
+    .avatar-friend {
+      width: 3em;
+      height: 3em;
+    }
+  }
+}

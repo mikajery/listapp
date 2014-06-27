@@ -1,0 +1,30 @@
+[
+ {
+  "id": 1,
+  "avatar_url": "/images/avatar-friend.png",
+  "first_name": "Alexandra",
+  "last_name": "W",
+  "items_nb": 23
+ },
+ {
+  "id": 2,
+  "avatar_url": "/images/avatar-friend.png",
+  "first_name": "Alexandra",
+  "last_name": "X",
+  "items_nb": 24
+ },
+ {
+  "id": 3,
+  "avatar_url": "/images/avatar-friend.png",
+  "first_name": "Alexandra",
+  "last_name": "Y",
+  "items_nb": 25
+ },
+ {
+  "id": 4,
+  "avatar_url": "/images/avatar-friend.png",
+  "first_name": "Alexandra",
+  "last_name": "Z",
+  "items_nb": 26
+ }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "listapp",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.5",
+    "angular-resource": "~1.2.5",
+    "angular-route": "~1.2.5",
+    "angular-sanitize": "~1.2.5",
+    "jquery": "~2.0.3",
+    "modernizr": "~2.7.1"
+  },
+  "devDependencies": {}
+}

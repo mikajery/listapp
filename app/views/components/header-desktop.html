@@ -1,0 +1,17 @@
+<header class="desktop">
+  <div class="banner">
+    <div class="container">
+      <a class="avatar-user"></a>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="container">
+      <h1>{{headerTitle}}</h1>
+      <ul>
+        <li><a ng-class="{ active: isActive('list') }" href="#/user/list">List</a></li>
+        <li><a ng-class="{ active: isActive('friends') }" href="#/user/friends">Friends</a></li>
+        <li ng-click="grid = !grid"><a ng-class="{'icon-list': grid, 'icon-grid': !grid }"></a></li>
+      </ul>
+    </div>
+  </div>
+</header>

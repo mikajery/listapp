@@ -1,0 +1,14 @@
+<header-component header-title="My Friends" grid="grid"></header-component>
+<div class="friends container" ng-class="{ list: !grid }" ng-init="grid = true">
+  <ul>
+    <li ng-repeat="friend in friends">
+      <div><span class="avatar-friend" style="background-image: url({{friend.avatar_url}})"></span></div>
+      <div>
+        <p><a>{{ friend.first_name }} {{ friend.last_name }}</a>
+        <br> {{ friend.items_nb }} items </p>
+      </div>
+      <div><a class="mobile button">View List</a></div>
+    </li>
+  </ul>
+</div>
+<nav-component></nav-component>

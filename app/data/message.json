@@ -1,0 +1,21 @@
+ {
+  "id": 1,
+  "thread": [
+    {
+      "id": 1,
+      "created": "2014-02-05T08:15:30-05:00",
+      "from": "me",
+      "avatar_url": "./images/avatar-friend.png",
+      "to": "her",
+      "content": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo."
+    },
+    {
+      "id": 2,
+      "created": "2014-02-05T08:15:30-05:00",
+      "from": "her",
+      "to": "me",
+      "avatar_url": "./images/avatar-friend.png",
+      "content": "Nullam quis risus eget urna mollis ornare vel eu leo. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+    }
+  ]
+}

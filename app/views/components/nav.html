@@ -1,0 +1,46 @@
+<nav class="mobile" ng-init="popup = true; synced = false; importing = false">
+  <ul>
+    <li><a class="icon-activity" ng-class="{ active: isActive('activity')}" href="#/activity"></a></li>
+    <li><a class="icon-messages" ng-class="{ active: isActive('messages')}" href="#/messages"></a></li>
+    <li><a class="icon-profile" ng-class="{ active: isActive('user')}" href="#/user"></a></li>
+    <li ng-class="{ hidden: !popup}"><a class="icon-sync" ng-click="synced = true"></a></li>
+  </ul>
+  <div class="tooltip-sync" ng-show="popup">
+    <span class="icon-sync"></span>
+    <p>Press sync to your amazon list synced with Amazon.</p>
+    <button ng-click="popup = false"><span>Skip</span></button>
+  </div>
+  <div class="modal-background" ng-show="synced">
+    <div class="modal-container">
+      <h1>Add Your Amazon Wish List</h1>
+      <article>
+        <span class="numbered">1</span>
+        <p>Go to you Wish List on Amazon.com</p>
+        <img src="images/import/step1.png">
+      </article>
+      <article>
+        <span class="numbered">2</span>
+        <p>Copy you Wish List web address</p>
+        <img src="images/import/step2.png">
+      </article>
+      <article>
+        <span class="numbered">3</span>
+        <p>Paste it here...</p>
+        <input class="wishlist-url">
+      </article>
+      <button class="blue" ng-click="importing = true"><span>Import My List</span></button>
+      <div class="overlay" ng-show="importing || success">
+        <div class="overlay-container">
+          <div ng-show="importing" ng-click="importing = false; success = true">
+            <span class="icon-spin"></span>
+            <p>Importing...</p>
+          </div>
+          <div ng-show="success" ng-click="synced = false; success = false">
+            <span class="icon-success"></span>
+            <p>Success!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

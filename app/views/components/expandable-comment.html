@@ -1,0 +1,33 @@
+<span class="expandable-comment">
+  <input class="write-comment" type="text" placeholder="Write a comment" ng-focus="expand()" ng-hide="expanded">
+  <div class="textarea-container" ng-show="expanded">
+    <textarea class="write-comment" rows="3"></textarea>
+    <button ng-class="{selected: lock}" ng-click="lock = !lock"><span class="icon-lock"></span></button>
+  </div>
+  <p class="share-with" ng-show="expanded">Share with your friends on</p>
+  <div class="share-on" ng-show="expanded">
+    <fieldset>
+      <div class="onoffswitch">
+          <input type="checkbox" name="facebook" class="onoffswitch-checkbox" id="facebook" checked>
+          <label class="onoffswitch-label" for="facebook">
+              <div class="onoffswitch-inner"></div>
+              <div class="onoffswitch-switch"></div>
+          </label>
+      </div>
+      <label for="facebook">Facebook</label>
+      </fieldset>
+    <fieldset>
+      <div class="onoffswitch">
+          <input type="checkbox" name="twitter" class="onoffswitch-checkbox" id="twitter" checked>
+          <label class="onoffswitch-label" for="twitter">
+              <div class="onoffswitch-inner"></div>
+              <div class="onoffswitch-switch"></div>
+          </label>
+      </div>
+      <label for="twitter">Twitter</label>
+    </fieldset>
+  </div>
+  <div class="leave-comment" ng-show="expanded">
+    <button class="blue"><span class="icon-comment"></span><span>Leave comment</span></button>
+  </div>
+</span>

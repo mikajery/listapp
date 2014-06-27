@@ -1,0 +1,88 @@
+.touch {
+  .messages {
+    p {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    a {
+      font-family: "Proxima Nova - Semibold";
+      color: #4c86b1;
+      vertical-align: middle;
+    }
+    small {
+      color: #a1a1a1;
+    }
+    ul {
+      li {
+        padding: .8em;
+        border-bottom: 1px solid #c6c6c6;
+        &:hover,
+        &:active {
+          background-color: #eaeff1;
+        }
+        & > div {
+          display: inline-block;
+        }
+        div:nth-of-type(1) {
+          padding-right: .8em;
+        }
+        div:nth-of-type(2) {
+          padding-right: .8em;
+          width: calc(100% - 7.2em);
+        }
+        div:nth-of-type(3) {
+          .icon-chevron-right {
+            color: #d5d5d5;
+            font-size: 1.6em;
+            padding: 0 0.2em;
+            text-shadow: 0 1px #fff, 0 -1px #a8acb8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-touch {
+  .messages {
+    ul {
+      overflow: hidden;
+      li {
+        -moz-box-sizing: border-box;
+             box-sizing: border-box;
+        background-color: #f9f9f9;
+        border-radius: .4em;
+        border: .1em solid #cdcdcd;
+        display: block;
+        float: left;
+        font-size: 1.2em;
+        line-height: 1.2em;
+        margin-bottom: 1em;
+        padding: .8em;
+        width: 100%;
+        & > div {
+          display: inline-block;
+          vertical-align: middle;
+          &:nth-of-type(2) {
+            margin: 0 .9em;
+            width: calc(100% - 10.8em);
+          }
+        }
+      }
+      p { color: #a1a1a1; }
+      a { color: #4c86b1; }
+    }
+    .icon-chevron-right {
+      font-size: 1.6em;
+      color: #d6d6d6;
+      text-shadow: 0 1px #fff, 0 -1px #a8acb8;
+      margin-left: 1em;
+    }
+    .avatar-friend {
+      width: 4em;
+      height: 4em;
+      border: 1px solid #cecece;
+    }
+  }
+}

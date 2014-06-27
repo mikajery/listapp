@@ -1,0 +1,21 @@
+<header-component header-title="My Wishlist" grid="grid"></header-component>
+<section class="container" ng-init="grid = false">
+  <div class="facebook-connect">
+    <p>See what your friends want.</p>
+    <button class="facebook"><span class="icon-facebook"></span><span>Connect</span></button>
+  </div>
+  <div class="grid" ng-show="grid">
+    <article ng-repeat-start="item in wishlist">
+      <div style="background-image: url({{ item.image_url }})"></div>
+    </article>
+    <span ng-repeat-end> </span>
+  </div>
+  <div class="list" ng-show="!grid">
+    <item-article ng-repeat="item in wishlist" item="item"></item-article>
+<!--     <item-article status="'new'"></item-article>
+    <item-article status="'owned'"></item-article>
+    <item-article status="'gifted'"></item-article>
+    <item-article status="'pending'"></item-article> -->
+  </div>
+</section>
+<nav-component></nav-component>
